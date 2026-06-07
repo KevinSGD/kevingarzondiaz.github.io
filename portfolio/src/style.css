@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans antialiased;
+    margin: 0;
+  }
+
+  ::selection { @apply bg-violet-600/40 text-white; }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-violet-500 ring-offset-2 ring-offset-slate-950;
+  }
+
+  ::-webkit-scrollbar        { width: 6px; }
+  ::-webkit-scrollbar-track  { @apply bg-slate-900; }
+  ::-webkit-scrollbar-thumb  { @apply bg-violet-700 rounded-full; }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl;
+  }
+
+  .glass-card-hover {
+    @apply transition-all duration-300
+           hover:bg-white/[0.07]
+           hover:border-violet-500/40
+           hover:shadow-[0_0_40px_rgba(139,92,246,0.14)]
+           hover:-translate-y-1.5;
+  }
+
+  .btn-primary {
+    @apply relative px-7 py-3.5 bg-violet-600 hover:bg-violet-500
+           text-white font-semibold rounded-xl cursor-pointer overflow-hidden
+           transition-all duration-300
+           hover:scale-105
+           hover:shadow-[0_0_30px_rgba(139,92,246,0.55)]
+           focus-visible:ring-2 focus-visible:ring-violet-400;
+  }
+
+  .btn-ghost {
+    @apply px-7 py-3.5 border border-slate-600 hover:border-violet-500
+           text-slate-300 hover:text-white font-semibold rounded-xl cursor-pointer
+           transition-all duration-300 hover:bg-violet-500/10 hover:scale-105;
+  }
+
+  .section-title   { @apply text-3xl md:text-4xl font-bold text-white mb-3; }
+  .section-subtitle { @apply text-slate-400 text-base md:text-lg; }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border;
+  }
+}
+
+@layer utilities {
+  .dot-grid {
+    background-image: radial-gradient(circle, rgba(139,92,246,0.10) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+
+  .glow-violet { box-shadow: 0 0 40px rgba(139, 92, 246, 0.3); }
+
+  /* ── Animated gradient text ── */
+  .text-gradient {
+    background: linear-gradient(
+      90deg,
+      #a78bfa 0%,
+      #f0abfc 20%,
+      #c4b5fd 40%,
+      #818cf8 60%,
+      #c4b5fd 80%,
+      #a78bfa 100%
+    );
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientTextMove 5s linear infinite;
+  }
+
+  /* ── Scroll reveal ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.is-visible       { opacity: 1; transform: translateY(0); }
+  .reveal[data-delay="1"]  { transition-delay: 100ms; }
+  .reveal[data-delay="2"]  { transition-delay: 200ms; }
+  .reveal[data-delay="3"]  { transition-delay: 300ms; }
+  .reveal[data-delay="4"]  { transition-delay: 400ms; }
+  .reveal[data-delay="5"]  { transition-delay: 500ms; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+    .reveal { opacity: 1; transform: none; }
+  }
+}
+
+/* ── Button shimmer sweep ── */
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 45%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  transform: translateX(-200%);
+  pointer-events: none;
+}
+.btn-primary:hover::after {
+  animation: shimmerPass 0.55s ease-out forwards;
+}
+
+/* ── Terminal code-line entrance ── */
+.code-line {
+  display: block;
+  opacity: 0;
+  animation: codeLineIn 0.22s ease-out calc(0.3s + var(--ln, 0) * 0.09s) forwards;
+}
+
+/* ── Keyframes ── */
+@keyframes gradientTextMove {
+  to { background-position: 300% center; }
+}
+
+@keyframes shimmerPass {
+  0%   { transform: translateX(-200%); }
+  100% { transform: translateX(320%); }
+}
+
+@keyframes codeLineIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
