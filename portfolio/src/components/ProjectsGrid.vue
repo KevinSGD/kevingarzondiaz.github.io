@@ -24,9 +24,19 @@
           <div :class="['h-1 w-full rounded-t-2xl bg-gradient-to-r', project.accentGradient]" aria-hidden="true"></div>
 
           <div class="flex flex-col flex-1 p-6 gap-5">
-            <!-- Number + emoji -->
+            <!-- Icon + index -->
             <div class="flex items-start justify-between">
-              <span class="text-3xl" role="img" :aria-label="project.emojiLabel">{{ project.emoji }}</span>
+              <div
+                :class="[
+                  'w-11 h-11 rounded-xl flex items-center justify-center',
+                  'ring-1 ring-white/10 transition-transform duration-300 group-hover:scale-105',
+                  project.iconBg,
+                ]"
+                role="img"
+                :aria-label="project.iconLabel"
+              >
+                <SectionIcon :name="project.icon" :color-class="project.iconColor" />
+              </div>
               <span class="font-mono text-slate-700 text-sm font-bold select-none">
                 {{ String(index + 1).padStart(2, '0') }}
               </span>
@@ -112,9 +122,12 @@
 </template>
 
 <script setup>
+import SectionIcon from './SectionIcon.vue'
+
 const projects = [
   {
-    emoji: '[01]', emojiLabel: 'Proyecto uno',
+    icon: 'layers', iconLabel: 'Arquitectura en capas',
+    iconBg: 'bg-teal-500/10', iconColor: 'text-teal-400',
     title: 'Pokémon Tournament Management System',
     type: 'REST API · Backend',
     description: 'Un backend de nivel empresarial diseñado bajo principios de Clean Architecture. Integra de forma asíncrona la PokeAPI con caché local, genera brackets algorítmicos de eliminación directa y cuenta con una suite automatizada de 86 pruebas. Código tan limpio que da miedo.',
@@ -129,7 +142,8 @@ const projects = [
     github: 'https://github.com/KevinSGD', demo: null,
   },
   {
-    emoji: '[02]', emojiLabel: 'Proyecto dos',
+    icon: 'chart', iconLabel: 'Simulador de estadísticas',
+    iconBg: 'bg-emerald-500/10', iconColor: 'text-emerald-400',
     title: 'Pokédex Estratégica & Simulador de Daño',
     type: 'Frontend App · Kanto Edition',
     description: 'Aplicación frontend interactiva y 100% estática. Procesa tipos elementales, estadísticas base y potencia de movimientos a la velocidad del rayo. Cero latencia, cero APIs caídas. Ideal para cuando necesitas saber si ese Thunderbolt va a noquear al Charizard rival.',
@@ -144,7 +158,8 @@ const projects = [
     github: 'https://github.com/KevinSGD', demo: null,
   },
   {
-    emoji: '[03]', emojiLabel: 'Proyecto tres',
+    icon: 'calendar', iconLabel: 'Programación de horarios',
+    iconBg: 'bg-amber-500/10', iconColor: 'text-amber-400',
     title: 'Sistema de Programación Académica',
     type: 'Fullstack · Optimización',
     description: 'Arquitectura completa que utiliza algoritmos de optimización para automatizar y resolver colisiones en horarios universitarios. Nació de la desesperación real de ver choques de materias. Backend robusto y frontend reactivo. También conocido como "TesisOMuerte".',

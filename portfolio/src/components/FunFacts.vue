@@ -25,12 +25,15 @@
         >
           <div
             :class="[
-              'w-12 h-12 rounded-xl flex items-center justify-center text-2xl',
-              'ring-1 ring-white/10 transition-transform duration-300 group-hover:scale-110',
+              'w-12 h-12 rounded-xl flex items-center justify-center',
+              'ring-1 ring-white/10 transition-transform duration-300 group-hover:scale-105',
               fact.iconBg,
             ]"
-            role="img" :aria-label="fact.iconLabel"
-          >{{ fact.icon }}</div>
+            role="img"
+            :aria-label="fact.iconLabel"
+          >
+            <SectionIcon :name="fact.icon" :color-class="fact.iconColor" />
+          </div>
 
           <div>
             <h3 class="text-white font-semibold text-base mb-1">{{ fact.title }}</h3>
@@ -64,21 +67,26 @@
 </template>
 
 <script setup>
+import SectionIcon from './SectionIcon.vue'
+
 const facts = [
   {
-    icon: '', iconLabel: 'Rayo de energía', iconBg: 'bg-yellow-500/10',
+    icon: 'bolt', iconLabel: 'Rayo de energía',
+    iconBg: 'bg-yellow-500/10', iconColor: 'text-yellow-400',
     title: 'Multitasking de nivel épico',
     body: 'Puedo estructurar un sistema modular asíncrono con testing estricto y debatir sobre las mejores mecánicas competitivas de la cuarta generación de Pokémon en la misma tarde. A veces en la misma hora.',
     tag: 'performance: O(∞)', tagCls: 'text-yellow-500/70',
   },
   {
-    icon: '', iconLabel: 'Taza de café', iconBg: 'bg-amber-500/10',
+    icon: 'coffee', iconLabel: 'Taza de café',
+    iconBg: 'bg-amber-500/10', iconColor: 'text-amber-400',
     title: 'Fórmula de Combustible',
     body: 'Mi código es 50% lógica abstracta, 40% asistencia agéntica avanzada y 10% café/té de dudosa procedencia. El 40% restante está en proceso de audit.',
     tag: 'fuel: coffee required', tagCls: 'text-amber-500/70',
   },
   {
-    icon: '', iconLabel: 'Herramientas', iconBg: 'bg-violet-500/10',
+    icon: 'checklist', iconLabel: 'Pruebas automatizadas',
+    iconBg: 'bg-violet-500/10', iconColor: 'text-violet-400',
     title: 'Filosofía de Desarrollo',
     body: 'Si no tiene pruebas automatizadas, es solo un deseo, no software. Esta frase la imprimo mentalmente en cada PR que reviso y cada función que escribo.',
     tag: 'tests: non-negotiable', tagCls: 'text-violet-400/70',
