@@ -3,7 +3,7 @@
     class="gengar-wrap"
     aria-label="Pixel art de Gengar"
     role="img"
-    title="¡Hola! Soy Gengar. Te estoy vigilando desde las sombras. 👻"
+    title="¡Hola! Soy Gengar. Te estoy vigilando desde las sombras."
   >
     <div class="gengar-px" :style="pixelStyle"></div>
   </div>

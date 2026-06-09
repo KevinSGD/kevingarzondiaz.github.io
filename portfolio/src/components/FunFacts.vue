@@ -56,7 +56,7 @@
           siguiente programador que lea el código."
         </p>
         <p class="mt-2 text-slate-600 font-mono text-xs">
-          <span class="text-green-500">✓</span> exit code 0
+          <span class="text-green-500">[OK]</span> exit code 0
         </p>
       </div>
     </div>
@@ -66,19 +66,19 @@
 <script setup>
 const facts = [
   {
-    icon: '⚡', iconLabel: 'Rayo de energía', iconBg: 'bg-yellow-500/10',
+    icon: '', iconLabel: 'Rayo de energía', iconBg: 'bg-yellow-500/10',
     title: 'Multitasking de nivel épico',
     body: 'Puedo estructurar un sistema modular asíncrono con testing estricto y debatir sobre las mejores mecánicas competitivas de la cuarta generación de Pokémon en la misma tarde. A veces en la misma hora.',
     tag: 'performance: O(∞)', tagCls: 'text-yellow-500/70',
   },
   {
-    icon: '☕', iconLabel: 'Taza de café', iconBg: 'bg-amber-500/10',
+    icon: '', iconLabel: 'Taza de café', iconBg: 'bg-amber-500/10',
     title: 'Fórmula de Combustible',
     body: 'Mi código es 50% lógica abstracta, 40% asistencia agéntica avanzada y 10% café/té de dudosa procedencia. El 40% restante está en proceso de audit.',
-    tag: 'fuel: ☕ required', tagCls: 'text-amber-500/70',
+    tag: 'fuel: coffee required', tagCls: 'text-amber-500/70',
   },
   {
-    icon: '🛠️', iconLabel: 'Herramientas', iconBg: 'bg-violet-500/10',
+    icon: '', iconLabel: 'Herramientas', iconBg: 'bg-violet-500/10',
     title: 'Filosofía de Desarrollo',
     body: 'Si no tiene pruebas automatizadas, es solo un deseo, no software. Esta frase la imprimo mentalmente en cada PR que reviso y cada función que escribo.',
     tag: 'tests: non-negotiable', tagCls: 'text-violet-400/70',

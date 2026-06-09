@@ -22,7 +22,10 @@
           <span class="text-gradient">Kevin Garzón</span>
         </h1>
 
-
+        <!-- Gengar beside the name -->
+        <div class="flex items-center justify-center lg:justify-start mb-5 animate-fade-up">
+          <GengarSprite />
+        </div>
 
         <!-- Role -->
         <p class="text-base md:text-lg text-violet-300 font-medium mb-5 animate-fade-up-slow">

@@ -114,7 +114,7 @@
 <script setup>
 const projects = [
   {
-    emoji: '🏆', emojiLabel: 'Trofeo',
+    emoji: '[01]', emojiLabel: 'Proyecto uno',
     title: 'Pokémon Tournament Management System',
     type: 'REST API · Backend',
     description: 'Un backend de nivel empresarial diseñado bajo principios de Clean Architecture. Integra de forma asíncrona la PokeAPI con caché local, genera brackets algorítmicos de eliminación directa y cuenta con una suite automatizada de 86 pruebas. Código tan limpio que da miedo.',
@@ -129,7 +129,7 @@ const projects = [
     github: 'https://github.com/KevinSGD', demo: null,
   },
   {
-    emoji: '📱', emojiLabel: 'Móvil',
+    emoji: '[02]', emojiLabel: 'Proyecto dos',
     title: 'Pokédex Estratégica & Simulador de Daño',
     type: 'Frontend App · Kanto Edition',
     description: 'Aplicación frontend interactiva y 100% estática. Procesa tipos elementales, estadísticas base y potencia de movimientos a la velocidad del rayo. Cero latencia, cero APIs caídas. Ideal para cuando necesitas saber si ese Thunderbolt va a noquear al Charizard rival.',
@@ -144,7 +144,7 @@ const projects = [
     github: 'https://github.com/KevinSGD', demo: null,
   },
   {
-    emoji: '📅', emojiLabel: 'Calendario',
+    emoji: '[03]', emojiLabel: 'Proyecto tres',
     title: 'Sistema de Programación Académica',
     type: 'Fullstack · Optimización',
     description: 'Arquitectura completa que utiliza algoritmos de optimización para automatizar y resolver colisiones en horarios universitarios. Nació de la desesperación real de ver choques de materias. Backend robusto y frontend reactivo. También conocido como "TesisOMuerte".',
