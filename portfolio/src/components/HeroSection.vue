@@ -22,11 +22,7 @@
           <span class="text-gradient">Kevin Garzón</span>
         </h1>
 
-        <!-- Gengar beside the name -->
-        <div class="flex items-center gap-3 mb-5 justify-center lg:justify-start animate-fade-up">
-          <GengarSprite />
-          <span class="text-violet-400/60 font-mono text-xs select-none">// #TeamGengar 👻</span>
-        </div>
+
 
         <!-- Role -->
         <p class="text-base md:text-lg text-violet-300 font-medium mb-5 animate-fade-up-slow">
@@ -104,14 +100,7 @@
 
     </div>
 
-    <!-- Scroll cue -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5
-                text-slate-600 text-xs animate-bounce" aria-hidden="true">
-      <span>scroll</span>
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-      </svg>
-    </div>
+
   </section>
 </template>
 
